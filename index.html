@@ -5,6 +5,16 @@
     <title>My Tamagotchi</title>
   </head>
   <body>
+    <form onsubmit="addName()">Enter name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+    <h1 id="name">Tamagotchi Name</h1>
+    <div id="metrics">
+      <div>Hunger <span id="hunger">1</span></div>
+      <div>Sleepiness <span id="sleepiness">1</span></div>
+      <div>Boredom <span id="boredom">1</span></div>
+      <div>Age <span id="age">0</span></div>
+    </div>
     <div id="image">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdywWVvI_8deJEutztq-nb9_mIEE-rEdERSA&usqp=CAU">
     </div>
