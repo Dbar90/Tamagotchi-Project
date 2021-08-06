@@ -1,3 +1,111 @@
+body {
+  background-color: grey;
+}
+
 img {
-  height: 100px;
+  height: 60px;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-family: monospace;
+  color: royalblue;
+  text-shadow: 0 0 5px yellow;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  font-family: cursive;
+  color: royalblue;
+  text-shadow: 0 0 5px yellow;
+  margin: 0;
+}
+
+#gamewindow {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: solid;
+  border-color: black;
+  border-radius: 15px;
+  height: 600px;
+  width: 400px;
+  margin: auto;
+  background-color: royalblue;
+}
+
+#metrics {
+  margin: 30px 30px 0 30px;
+  padding:10px;
+  color: yellow;
+  background-color: black;
+  border: solid;
+  border-radius: 5px;
+  border-color: black;
+}
+
+#image{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 30px 30px 30px;
+  border: solid;
+  border-radius: 5px;
+  background-color: white;
+  height: 600px;
+}
+
+#buttons {
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin: 20px;
+padding: 20px;
+}
+
+#pic {
+  animation: square 1.5s linear  infinite alternate;
+}
+
+@keyframes square {
+  0% {
+
+  }
+  25% {
+    transform: translateY(-200%);
+  }
+  50% {
+    transform: translateX(-150%);
+  }
+  75% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+.button {
+  border-radius: 5px;
+  background-color: yellow;
+  height: 30px;
+  font-family: monospace;
+  font-size: 15px;
+  color: royalblue;
+}
+
+form {
+  font-family: monospace;
+  color: royalblue;
+  text-shadow: 0 0 5px yellow;
+  font-size: 20px;
+}
+
+input {
+  font-family: monospace;
+  background-color: yellow;
+  color: royalblue;
+  border-radius: 5px;
 }
