@@ -36,7 +36,7 @@ class Tamagotchi {
         morph.setAttribute('src', 'image/charmeleon.png')
       }
       if (this.level >= 8) {
-        morph.setAttribute('src', 'image/charizard.png')
+        morph.setAttribute('src', 'image/Charizard.png')
       }
       document.querySelector('#level').innerHTML = this.level
       if (this.hunger >= 15) {
