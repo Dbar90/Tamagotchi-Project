@@ -51,7 +51,7 @@ class Tamagotchi {
         clearInterval(levelUp)
         morph.setAttribute('src', 'image/dead.png')
       }
-    }, 1000)
+    }, 2000)
   }
   gameTime() {
     const metricsUp = setInterval(()=> {
@@ -97,6 +97,7 @@ buttonSubmit.addEventListener('click', (event)=> {
   event.preventDefault()
   let pokeName = document.getElementById('input').value
   document.querySelector('h2').innerHTML = pokeName
+  alert("Do not let your Poke'Gotchi reach 15 Hunger, Sleepiness or Boredom!")
 })
 
 
