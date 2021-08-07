@@ -2,26 +2,28 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/style.css">
-    <title>My Tamagotchi</title>
+    <title>Poke'Gotchi</title>
   </head>
   <body>
     <h1>Poke'Gotchi!</h1>
-    <form onsubmit="addName()">Enter name: <input type="text" name="fname">
-  <input type="submit" value="Submit">
-</form>
-    <h2 id="name">Tamagotchi Name</h1>
+    <form id="form">
+      <input type="text" id="input" placeholder="Poke'name">
+      <button id="submit">Submit</button>
+    </form>
+    <h2 id="name">Poke'Gotchi Name</h2>
     <div id="gamewindow">
       <div id="metrics">
         <div>Hunger: <span id="hunger">1</span></div>
         <div>Sleepiness: <span id="sleepiness">1</span></div>
         <div>Boredom: <span id="boredom">1</span></div>
-        <div>Level <span id="level">0</span></div>
+        <div>Level <span id="level">1</span></div>
       </div>
 
       <div id="image">
-        <img id="pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdywWVvI_8deJEutztq-nb9_mIEE-rEdERSA&usqp=CAU">
+        <img id="pic" src="image/charmander.png">
       </div>
       <div id="buttons">
+        <button class="button" id="start">Start Game</button>
         <button class="button" id="feed">Feed</button>
         <button class="button" id="lightsout">Turn off the lights</button>
         <button class="button" id="play">Play</button>

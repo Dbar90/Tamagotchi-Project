@@ -4,6 +4,7 @@ body {
 
 img {
   height: 60px;
+  position: relative;
 }
 
 h1 {
@@ -21,6 +22,7 @@ h2 {
   color: royalblue;
   text-shadow: 0 0 5px yellow;
   margin: 0;
+  font-size: 35px;
 }
 
 #gamewindow {
@@ -44,6 +46,7 @@ h2 {
   border: solid;
   border-radius: 5px;
   border-color: black;
+  font-family: monospace;
 }
 
 #image{
@@ -53,20 +56,21 @@ h2 {
   margin: 0 30px 30px 30px;
   border: solid;
   border-radius: 5px;
-  background-color: white;
+  background-color: black;
   height: 600px;
 }
 
 #buttons {
 display: flex;
+flex-wrap: wrap-reverse;
 justify-content: space-around;
-align-items: center;
 margin: 20px;
 padding: 20px;
+height: 120px;
 }
 
-#pic {
-  animation: square 1.5s linear  infinite alternate;
+/* #pic {
+  animation: square 2s linear  infinite alternate;
 }
 
 @keyframes square {
@@ -74,18 +78,18 @@ padding: 20px;
 
   }
   25% {
-    transform: translateY(-200%);
+    transform: translateY(-250%);
   }
   50% {
-    transform: translateX(-150%);
+    transform: translateX(-230%);
   }
   75% {
-    transform: translateY(200%);
+    transform: translateY(230%);
   }
   100% {
-    transform: translateX(150%);
+    transform: translateX(230%);
   }
-}
+} */
 
 .button {
   border-radius: 5px;
@@ -96,16 +100,21 @@ padding: 20px;
   color: royalblue;
 }
 
-form {
+#input {
   font-family: monospace;
   color: royalblue;
   text-shadow: 0 0 5px yellow;
   font-size: 20px;
 }
 
-input {
+#submit {
   font-family: monospace;
   background-color: yellow;
   color: royalblue;
   border-radius: 5px;
+  font-size: 20px;
+}
+
+#start {
+  order: 1;
 }
