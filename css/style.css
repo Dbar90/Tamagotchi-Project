@@ -2,7 +2,7 @@ body {
   background-color: grey;
 }
 
-img {
+#pic {
   height: 60px;
   position: relative;
 }
@@ -32,7 +32,7 @@ h2 {
   border: solid;
   border-color: black;
   border-radius: 15px;
-  height: 600px;
+  height: 550px;
   width: 400px;
   margin: auto;
   background-color: royalblue;
@@ -56,8 +56,8 @@ h2 {
   margin: 0 30px 30px 30px;
   border: solid;
   border-radius: 5px;
-  background-color: black;
-  height: 600px;
+  background-color: white;
+  height: 550px;
 }
 
 #buttons {
@@ -68,28 +68,6 @@ margin: 20px;
 padding: 20px;
 height: 120px;
 }
-
-/* #pic {
-  animation: square 2s linear  infinite alternate;
-}
-
-@keyframes square {
-  0% {
-
-  }
-  25% {
-    transform: translateY(-250%);
-  }
-  50% {
-    transform: translateX(-230%);
-  }
-  75% {
-    transform: translateY(230%);
-  }
-  100% {
-    transform: translateX(230%);
-  }
-} */
 
 .button {
   border-radius: 5px;
@@ -117,4 +95,8 @@ height: 120px;
 
 #start {
   order: 1;
+}
+
+#day {
+  height: 600px;
 }

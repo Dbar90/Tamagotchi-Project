@@ -10,22 +10,48 @@ class Tamagotchi {
     let button1 = document.querySelector('#feed')
     button1.addEventListener('click', (event)=> {
       this.hunger-=2
-      document.querySelector('#hunger').innerHTML = `${this.hunger}`
+      document.querySelector('#hunger').innerHTML = this.hunger
     })
   }
   play() {
     let button2 = document.querySelector('#play')
     button2.addEventListener('click', (event)=> {
       this.boredom--
-      document.querySelector('#boredom').innerHTML = `${this.boredom}`
+      document.querySelector('#boredom').innerHTML = this.boredom
     })
   }
   goodNight() {
     let button3 = document.querySelector('#lightsout')
     button3.addEventListener('click', (event)=> {
       this.sleepiness--
-      document.querySelector('#sleepiness').innerHTML = `${this.sleepiness}`
+      document.querySelector('#sleepiness').innerHTML = this.sleepiness
+      document.querySelector('#image').style.backgroundColor = 'black'
     })
+  }
+  levelUp() {
+    const levelUp = setInterval(()=> {
+      this.level++
+      let morph = document.querySelector('#pic')
+      if (this.level >= 4) {
+        morph.setAttribute('src', 'image/charmeleon.png')
+      }
+      if (this.level >= 8) {
+        morph.setAttribute('src', 'image/charizard.png')
+      }
+      document.querySelector('#level').innerHTML = this.level
+      if (this.hunger >= 15) {
+        clearInterval(levelUp)
+        morph.setAttribute('src', 'image/dead.png')
+      }
+      if (this.sleepiness >= 15) {
+        clearInterval(levelUp)
+        morph.setAttribute('src', 'image/dead.png')
+      }
+      if (this.boredom >= 15) {
+        clearInterval(levelUp)
+        morph.setAttribute('src', 'image/dead.png')
+      }
+    }, 1000)
   }
   gameTime() {
     const metricsUp = setInterval(()=> {
@@ -37,46 +63,32 @@ class Tamagotchi {
       document.querySelector('#boredom').innerHTML = this.boredom
       if (this.hunger >= 15) {
         clearInterval(metricsUp)
-        alert(`${document.querySelector('#name').innerHTML} has starved to death!`)
        }
       if (this.sleepiness >= 15) {
         clearInterval(metricsUp)
-        alert(`${document.querySelector('#name').innerHTML} has died from exhaustion!`)
       }
       if (this.boredom >= 15) {
         clearInterval(metricsUp)
-        alert(`${document.querySelector('#name').innerHTML} has died of pure boredom!`)
       }
     }, 2000)
    }
-  levelUp() {
-    const levelUp = setInterval(()=> {
-      this.level++
-      document.querySelector('#level').innerHTML = this.level
-      if (this.hunger >= 15) {
-        clearInterval(levelUp)
-      }
-      if (this.sleepiness >= 15) {
-        clearInterval(levelUp)
-      }
-      if (this.boredom >= 15) {
-        clearInterval(levelUp)
-      }
-    }, 1000)
-  }
-  evolve() {
-    if (this.level === 4) {
-      document.getElementById('pic').src = "image/charmeleon.png"
-    }
-  }
   movePoke() {
     let picMove = document.getElementById('pic')
     picMove.height = 60
     picMove.width = 60
-    setInterval(()=> {
+    const pokeMove = setInterval(()=> {
     picMove.style.top = Math.floor((Math.random() * 100) + 1)+'px'
     picMove.style.left = Math.floor((Math.random() * 100) + 1)+'px'
-  }, 300)
+    if (this.hunger >= 15) {
+      clearInterval(pokeMove)
+    }
+    if (this.sleepiness >= 15) {
+      clearInterval(pokeMove)
+    }
+    if (this.boredom >= 15) {
+      clearInterval(pokeMove)
+      }
+    }, 300)
   }
 }
 
@@ -93,12 +105,11 @@ const newTama = new Tamagotchi()
 
   let startGame = document.querySelector('#start')
   startGame.addEventListener('click', (event)=> {
-    // newTama.gameTime()
+    newTama.gameTime()
     newTama.levelUp()
-    // newTama.feedPet()
-    // newTama.play()
-    // newTama.goodNight()
-    newTama.evolve()
+    newTama.feedPet()
+    newTama.play()
+    newTama.goodNight()
     newTama.movePoke()
   })
 
